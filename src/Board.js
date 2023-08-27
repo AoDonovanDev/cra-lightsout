@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cell from "./Cell";
-import winScreen from "./WinScreen";
+import WinScreen from "./WinScreen";
 import "./Board.css";
 
 /** Game board of Lights out.
