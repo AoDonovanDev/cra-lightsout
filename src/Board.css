@@ -1,0 +1,11 @@
+.Board {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  place-items: center ;
+}
+.rows{
+  display: flex;
+  flex-direction: column;
+}
