@@ -28,7 +28,7 @@ import "./Board.css";
  *
  **/
 
-function Board({ nrows, ncols, chanceLightStartsOn }) {
+function Board({ nrows, ncols, chanceLightStartsOn, test }) {
   const [board, setBoard] = useState(createBoard());
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
@@ -41,6 +41,9 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
         const isOn = Math.random() < chanceLightStartsOn ? true : false;
         initialBoard[i].push(isOn)
       }
+    }
+    if(test){
+      initialBoard=[[false,false,false,false,false],[false,false,false,false,false],[false,false,false,false,false],[false,false,false,false,false],[true,true,false,true,true]]
     }
     return initialBoard;
   }
@@ -89,7 +92,7 @@ function Board({ nrows, ncols, chanceLightStartsOn }) {
       <table >
       <tbody className="Board">
       {
-      board.map((r,y) => <tr className="rows" key={[r,y]}>{r.map((c,x) => <Cell flipCellsAroundMe={flipCellsAround} isLit={c} key={`${y}-${x}`} coord={`${y}-${x}`} />)}</tr>)
+      board.map((r,y) => <tc className="rows" key={[r,y]}>{r.map((c,x) => <Cell flipCellsAroundMe={flipCellsAround} isLit={c} key={`${y}-${x}`} coord={`${y}-${x}`} />)}</tc>)
       }
     
       </tbody>
